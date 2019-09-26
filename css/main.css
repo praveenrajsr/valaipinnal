@@ -21,12 +21,99 @@ html {
   height: 100vh  !important;
 }
 
+.noscroll {
+  overflow-y: hidden;
+}
+
+[aria-hidden="true"] {
+  display: none;
+}
+
+[area-hidden="false"] {
+  display: block;
+}
+
 .hide {
   display: none;
 }
 
 .text-center {
   text-align: center !important;
+}
+
+.input-field {
+  position: relative;
+  height: 40px;
+}
+
+.input-field input[type="text"], .input-field input[type="email"], .input-field input[type="tel"] {
+  position: absolute;
+  background: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding-top: 18px;
+  font-size: 16px;
+  width: 100%;
+  color: #fff;
+  outline: none;
+}
+
+.input-field input[type="text"]:focus + label, .input-field input[type="text"]:valid + label, .input-field input[type="email"]:focus + label, .input-field input[type="email"]:valid + label, .input-field input[type="tel"]:focus + label, .input-field input[type="tel"]:valid + label {
+  -webkit-transform: translateY(-35px);
+          transform: translateY(-35px);
+  font-size: 14px;
+  color: #fff;
+  padding: 2px 6px;
+}
+
+.input-field input[type="text"]:focus ~ span:before, .input-field input[type="text"]:valid ~ span:before, .input-field input[type="email"]:focus ~ span:before, .input-field input[type="email"]:valid ~ span:before, .input-field input[type="tel"]:focus ~ span:before, .input-field input[type="tel"]:valid ~ span:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.input-field label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.input-field span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  background: #555;
+  width: 100%;
+  height: 2px;
+}
+
+.input-field span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00b0ff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 .underline {
@@ -273,6 +360,36 @@ main nav .va-mob-menu ul li:hover {
 
 main nav .va-mob-menu ul li:hover > a {
   color: #000;
+}
+
+main .va-booking {
+  position: fixed;
+  top: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: -175px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 500;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+main .va-booking:hover {
+  left: 0;
+}
+
+main .va-booking .va-request {
+  background: #152841;
+  height: 100%;
+  padding: 18px 15px;
+}
+
+main .va-booking .va-coffee {
+  background: #fff;
 }
 
 main .brief {
@@ -1086,6 +1203,68 @@ main .scrolldown span:nth-child(3) {
   .work-together button {
     margin-top: 15px;
   }
+}
+
+.work-together .work-with-us {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #313149;
+  z-index: 50000;
+  overflow-y: scroll;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+.work-together .work-with-us i {
+  position: absolute;
+  float: right;
+  top: 35px;
+  right: 65px;
+  font-size: 2em;
+  color: red;
+  cursor: pointer;
+}
+
+.work-together .work-with-us .logo {
+  padding: 35px 0 0 55px;
+}
+
+.work-together .work-with-us .main_content {
+  margin-left: 50%;
+  padding: 25px 0 0 0;
+  text-align: left;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 867px) {
+  .work-together .work-with-us .main_content {
+    margin-left: 0%;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    padding: 40px;
+  }
+}
+
+.work-together .work-with-us .main_content p {
+  text-align: left;
+  line-height: 25px;
+  font-size: 1em;
+}
+
+.work-together .work-with-us .main_content form {
+  padding: 25px 0 0 0;
+}
+
+.work-together .work-with-us .main_content form .input-field {
+  margin-top: 50px;
+}
+
+.work-together .work-with-us .main_content form button {
+  margin-top: 25px;
 }
 
 footer .top-footer {

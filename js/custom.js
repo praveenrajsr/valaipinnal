@@ -1,8 +1,7 @@
 const root = document.getElementById("main-head");
-let menu = document.getElementById('va-mob-menu');
-let mobul = document.getElementById('mob-ul');
 let material = new Blotter.FliesMaterial();
 var textvh = window.innerHeight * 0.2833;
+let body = document.getElementsByTagName("HTML")[0];
 var text = new Blotter.Text("Valai Pinnal", {
     family: "IndieFlower",
     size: 160,
@@ -29,7 +28,14 @@ let ham = document.getElementById('hamburger').addEventListener("click", functio
     this.classList.toggle('is-active');
 });
 
-function toggleMenu(){
+function toggleMenu(menu , mobul){
     menu.classList.toggle('show');
-    mobul.classList.toggle('hide');
+    if(mobul){
+        mobul.classList.toggle('hide');
+    }
+    body.classList.toggle('noscroll');
+}
+function onlyclose(idname){
+    idname.classList.remove('show');
+    body.classList.toggle('noscroll');
 }

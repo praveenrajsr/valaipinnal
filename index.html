@@ -35,16 +35,16 @@
             </div>
             <!-- mob-btn -->
             <div class="ham-button">
-                <button id="hamburger" class="hamburger hamburger--collapse" type="button" onclick="toggleMenu()">
+                <button id="hamburger" class="hamburger hamburger--collapse" type="button" onclick="toggleMenu(va_mob_menu, mob_ul)">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
                 </button>
             </div>
             <!-- mob full screen menu -->
-            <div class="va-mob-menu" id="va-mob-menu">
+            <div class="va-mob-menu" id="va_mob_menu">
 
-                <ul class="mob-ul hide" id="mob-ul">
+                <ul class="mob-ul hide" id="mob_ul">
                     <li><a href="">Home</a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="">Careers</a></li>
@@ -54,7 +54,14 @@
                 </ul>
             </div>
         </nav>
-
+        <div class="va-booking">
+            <div class="va-request">
+                Request a Proposal
+            </div>
+            <div class="va-coffee">
+                <img src="./img/cofee.gif" alt="">
+            </div>
+        </div>
         <div id="main-head" class="main-head-class main-head">
 
         </div>
@@ -213,7 +220,36 @@
     <section class="work-together">
         <p>Interested in Working Together?</p>
         <div class="button">
-            <button class="black-btn"> Get In Touch</button>
+            <button class="black-btn" onclick="toggleMenu(work_with_us)"> Get In Touch</button>
+        </div>
+        <!-- overlay form -->
+        <div class="work-with-us" id="work_with_us">
+            <div class="close">
+                <i class="icon-057" onclick="onlyclose(work_with_us)"></i>
+            </div>
+            <div class="logo">ValaiPinnal</div>
+            <div class="main_content">
+                <h2>TELL US YOUSELF</h2>
+                <p>Thank you for your interest in working with us! Please <br> complete the details below and we'll get in touch with you.</p>
+                <form action="" method="post">
+                    <div class="input-field">
+                        <input class="work-with-input" type="text" name="" required>
+                        <label for="">Your Name*</label>
+                        <span></span>
+                    </div>
+                    <div class="input-field">
+                        <input class="work-with-input" type="tel" name="" required>
+                        <label for="">Mobile Number*</label>
+                        <span></span>
+                    </div>
+                    <div class="input-field">
+                        <input class="work-with-input" type="email" name="" required>
+                        <label for="">Email*</label>
+                        <span></span>
+                    </div>
+                    <button type="submit" class="main-btn"> Submit</button>
+                </form>
+            </div>
         </div>
     </section>
     <footer>

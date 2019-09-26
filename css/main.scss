@@ -55,11 +55,76 @@ html {
 .show{
     height: 100vh  !important;
 }
+.noscroll{
+    overflow-y: hidden;
+}
+[aria-hidden="true"]{
+    display: none;
+}
+[area-hidden = "false"]{
+    display: block;
+}
 .hide{
     display: none;
 }
 .text-center{
     text-align: center !important;
+}
+// Custom input effect
+.input-field{
+    position: relative;
+    height: 40px;
+    input[type="text"],input[type="email"],input[type="tel"]{
+        position: absolute;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding-top: 18px;
+        font-size: 16px;
+        width: 100%;
+        color: #fff;
+        outline: none;
+        &:focus + label, &:valid + label {
+            transform: translateY(-35px);
+            font-size: 14px;
+            color: #fff;
+            padding: 2px 6px;
+        }
+        &:focus ~ span:before, &:valid ~ span:before {
+            transform: scaleX(1);
+            transform-origin: left;
+            transition: transform 0.5s ease-in-out;
+        }
+    }
+    label{
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+    }
+    span{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: block;
+        background: #555;
+        width: 100%;
+        height: 2px;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #00b0ff;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease-in-out;
+        }
+    }
 }
 .underline{
     position: relative;
@@ -242,6 +307,27 @@ main{
                     }
                 }
             }
+        }
+    }
+    .va-booking{
+        position: fixed;
+        top: 40%;
+        display: flex;
+        left:-175px;
+        align-items: center;
+        z-index: 500;
+        cursor: pointer;
+        transition:0.5s;
+        &:hover{
+            left:0;
+        }
+        .va-request{
+            background: #152841;
+            height: 100%;
+            padding: 18px 15px;
+        }
+        .va-coffee{
+            background: #fff;
         }
     }
     .brief{
@@ -778,6 +864,54 @@ main{
     button{
         @include maxsmall(){
             margin-top: 15px;
+        }
+    }
+    .work-with-us{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #313149;
+        z-index: 50000;
+        overflow-y: scroll;
+        transition: height 0.5s;
+        i{
+            position: absolute;
+            float: right;
+            top: 35px;
+            right: 65px;
+            font-size: 2em;
+            color: red;
+            cursor: pointer;
+        }
+        .logo{
+            padding: 35px 0 0 55px;
+        }
+        .main_content{
+            margin-left: 50%;
+            padding: 25px 0 0 0;
+            text-align: left;
+            transform: translateX(-50%);
+            @include maxsmall(){
+                margin-left: 0%;
+                transform: translateX(-0%);
+                padding: 40px;
+            }
+            p{
+                text-align: left;
+                line-height: 25px;
+                font-size: 1em;
+            }
+            form{
+                padding: 25px 0 0 0;
+                .input-field{
+                    margin-top: 50px;
+                }
+                button{
+                    margin-top: 25px;
+                }
+            }
         }
     }
 }
